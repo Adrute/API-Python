@@ -59,7 +59,7 @@ Directorios a tener en cuenta:
 
 ## Casos de uso
 
-- API for a Web Application
+- API for a Web Application 
 - API for a Mobile Application
 
 ## Configuración
