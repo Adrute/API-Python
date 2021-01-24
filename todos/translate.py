@@ -24,7 +24,7 @@ def translateText(text, source, target):
     return response
 
 
-def gettranslate(event, context):
+def getTranslate(event, context):
     table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
     
     # fetch todo from the database
@@ -39,7 +39,7 @@ def gettranslate(event, context):
     sourceResult = detectTextLanguage(text)
     source = sourceResult['Languages'][0]['LanguageCode']
     
-    target = event['pathParameters']['lang']
+    target = event['pathParameters']['language']
     
     taskTranslated = translateText(
         text,
