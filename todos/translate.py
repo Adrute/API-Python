@@ -24,7 +24,7 @@ def translateText(text, source, target):
     return response
 
 
-def translate(event, context):
+def gettranslate(event, context):
     table = dynamodb.Table(os.environ['DYNAMODB_TABLE'])
     
     # fetch todo from the database
