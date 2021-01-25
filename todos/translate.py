@@ -8,11 +8,6 @@ dynamodb = boto3.resource('dynamodb')
 translate = boto3.client('translate')
 comprehend = boto3.client('comprehend')
 
-def detectTextLanguage(text):
-    response = comprehend.detect_dominant_languaje(Text=text)
-    
-    return response
-    
 def translateText(text, source, target):
     
     response = translate.translate_text(
@@ -36,7 +31,7 @@ def getTranslate(event, context):
     
     text = result['Item']['text']
     
-    sourceResult = detectTextLanguage(text)
+    sourceResult = comprehend.detect_dominant_language(Text=text)
     source = sourceResult['Languages'][0]['LanguageCode']
     
     target = event['pathParameters']['language']
