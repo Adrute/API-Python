@@ -36,14 +36,14 @@ def getTranslate(event, context):
     
     text = result['Item']['text']
     
-    sourceResult = detectTextLanguage(text)
-    source = sourceResult['Languages'][0]['LanguageCode']
+    ##sourceResult = detectTextLanguage(text)
+    ##source = sourceResult['Languages'][0]['LanguageCode']
     
     target = event['pathParameters']['language']
     
     taskTranslated = translateText(
         text,
-        source,
+        'en',
         target
     )
     
