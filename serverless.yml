@@ -22,7 +22,7 @@ provider:
         
     - Effect: Allow
       Action:
-        - comprehend:DetectDominantLanguage
+        - comprehend:*
       Resource: "*"
 
     - Effect: Allow

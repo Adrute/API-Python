@@ -9,7 +9,6 @@ translate = boto3.client('translate')
 comprehend = boto3.client('comprehend')
 
 def detectTextLanguage(text):
-    print('ADR Lenguaje: ', text)
     response = comprehend.detect_dominant_languaje(Text=text)
     
     return response
